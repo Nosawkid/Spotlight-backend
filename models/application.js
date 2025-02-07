@@ -15,10 +15,7 @@ const applicationSchema = new Schema({
     type: Number,
     default: 0,
   },
-  message: {
-    type: String,
-    required: [true, "Message cannot be empty"],
-  },
+
   appliedAt: {
     type: Date,
     default: Date.now,

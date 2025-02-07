@@ -10,6 +10,13 @@ const messageSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Chat",
   },
+  senderId: {
+    type: Schema.Types.ObjectId,
+  },
+  isArtist: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Message", messageSchema);

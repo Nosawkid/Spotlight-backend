@@ -23,12 +23,34 @@ const projectSchema = new Schema({
       ref: "Profession",
     },
   ],
+  experience: {
+    type: String,
+    enum: ["beginner", "intermediate", "advanced"],
+    default: "beginner",
+  },
+  minAgeRequirement: {
+    type: Number,
+    min: 0,
+  },
+  maxAgeRequirement: {
+    type: Number,
+    max: 150,
+  },
   applications: [
     {
       type: Schema.Types.ObjectId,
       ref: "Application",
     },
   ],
+  projectStatus: {
+    type: Number,
+    default: 0,
+    enum: [0, 1, 2],
+  },
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+  },
 });
 
 projectSchema.set("toJSON", {

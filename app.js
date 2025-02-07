@@ -12,6 +12,7 @@ const userRoutes = require("./routes/users");
 const loginRoutes = require("./routes/login");
 const filmmakerRoutes = require("./routes/filmmaker");
 const artistRoutes = require("./routes/artist");
+const chatRoutes = require("./routes/chat");
 
 // Custom middlewares
 const middlewares = require("./utils/middleware");
@@ -28,6 +29,7 @@ app.use("/api/login", loginRoutes);
 app.use("/api/filmmaker", filmmakerRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/artist", artistRoutes);
+app.use("/api/chat", chatRoutes);
 app.use(middlewares.unknownEndpoints);
 app.use(middlewares.errorHandler);
 

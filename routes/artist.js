@@ -10,9 +10,9 @@ artistRoute.post("/application/:projectId", async (req, res) => {
     return res.status(404).json({ message: "No project found" });
   }
 
-  const { message } = req.body;
+  const { userId } = req.body;
   let application = new Application({
-    message,
+    userId,
     projectId,
   });
   application = await application.save();

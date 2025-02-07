@@ -41,9 +41,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
       },
-      expImage: {
-        type: String,
-      },
       expLink: {
         type: String,
       },
@@ -59,6 +56,18 @@ const userSchema = new Schema({
       ref: "Application",
     },
   ],
+  verificationStatus: {
+    type: Number,
+    default: 0,
+  },
+  age: {
+    type: Number,
+    min: 0,
+  },
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+  },
 });
 
 userSchema.set("toJSON", {
